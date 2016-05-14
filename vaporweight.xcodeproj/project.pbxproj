@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24A8BF9C1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A8BF9B1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png */; };
 		62168EC61CE7DDCA0016782E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62168EC51CE7DDCA0016782E /* AppDelegate.swift */; };
 		62168EC81CE7DDCA0016782E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62168EC71CE7DDCA0016782E /* MainViewController.swift */; };
 		62168ECB1CE7DDCA0016782E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62168EC91CE7DDCA0016782E /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24A8BF9B1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "635844632811668548-110012419_IZTpcV7.png"; sourceTree = "<group>"; };
 		62168EC21CE7DDCA0016782E /* vaporweight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vaporweight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62168EC51CE7DDCA0016782E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62168EC71CE7DDCA0016782E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				62168ECC1CE7DDCA0016782E /* Assets.xcassets */,
 				62168ECE1CE7DDCA0016782E /* LaunchScreen.storyboard */,
 				62168ED11CE7DDCA0016782E /* Info.plist */,
+				24A8BF9B1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png */,
 			);
 			path = vaporweight;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62168ED01CE7DDCA0016782E /* LaunchScreen.storyboard in Resources */,
+				24A8BF9C1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png in Resources */,
 				62168ECD1CE7DDCA0016782E /* Assets.xcassets in Resources */,
 				62168ECB1CE7DDCA0016782E /* Main.storyboard in Resources */,
 			);
@@ -286,6 +290,7 @@
 				62168ED61CE7DDCA0016782E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
