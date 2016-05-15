@@ -38,10 +38,13 @@ class SessionTableViewController : UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("sessionCell", forIndexPath: indexPath) as! SessionTableViewCell
         
         let locations = model.locations
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale.currentLocale()
+        formatter.timeStyle = .MediumStyle
         
         cell.durationLabel.text = locations[index].session.duration?.description
         cell.cityLabel.text = locations[index].title
-        cell.dateLabel.text =  locations[index].session.startTime.timeIntervalSince1970.description
+        cell.dateLabel.text =  formatter.stringFromDate(locations[index].session.startTime)
         
         return cell;
     }

@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        self.client?.subscribeToChannels(["vaporweight"], withPresence: true)
+        self.client?.subscribeToChannels(["vaporweight1"], withPresence: true)
         
         return true
     }

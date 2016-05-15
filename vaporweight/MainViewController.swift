@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class MainViewController: UIViewController {
+    @IBOutlet var weightSelector: UISwitch!
 
     let locationManager = LocationManagerSingleton.sharedInstance
     let model = Model.sharedInstance
@@ -18,7 +19,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        
+        weightSelector.setOn(false, animated: false)
         // subscripe to weight session notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "sessionStarted", name: model.sessionStartedKey(), object: nil)
         
@@ -62,6 +63,16 @@ class MainViewController: UIViewController {
         // update table view and mapview if they are loaded ?? end time view
         
         // push the session + map data back up to the server
+    }
+    @IBAction func onSwitch(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        if weightSelector.on {
+            appDelegate.client?.unsubscribeFromAll()
+            appDelegate.client?.subscribeToChannels(["vaporweight2"], withPresence: true)
+        }else{
+            appDelegate.client?.unsubscribeFromAll()
+            appDelegate.client?.subscribeToChannels(["vaporweight1"], withPresence: true)
+        }
     }
 }
 
