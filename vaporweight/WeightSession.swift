@@ -12,9 +12,13 @@ import Foundation
 class WeightSession {
     var startTime : NSDate
     var endTime : NSDate?
-    var duration : Float32?
+    var duration : Int?
     
     init(startTime: NSDate) {
         self.startTime = startTime
     }
+    
+    func setEnd(endT: NSDate) {
+        self.endTime = endT
+        self.duration = Int(self.endTime.timeIntervalSince1970 - self.startTime.timeIntervalSince1970)
 }
