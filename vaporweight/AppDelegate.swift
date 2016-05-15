@@ -36,11 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     }
     
     // Handle new message from one of channels on which client has been subscribed.
-    func client(client: PubNub!, didReceiveMessage message: PNMessageResult!) {
+    func client(client: PubNub, didReceiveMessage message: PNMessageResult) {
         
         // Handle new message stored in message.data.message
         if message.data.actualChannel != nil {
-            
             // Message has been received on channel group stored in
             // message.data.subscribedChannel
         }
@@ -56,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     }
     
     // New presence event handling.
-    func client(client: PubNub!, didReceivePresenceEvent event: PNPresenceEventResult!) {
+    func client(client: PubNub, didReceivePresenceEvent event: PNPresenceEventResult) {
         
         // Handle presence event event.data.presenceEvent (one of: join, leave, timeout,
         // state-change).
@@ -89,8 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     
     
     // Handle subscription status change.
-    func client(client: PubNub!, didReceiveStatus status: PNSubscribeStatus!) {
-        
+    func client(client: PubNub, didReceiveStatus status: PNStatus) {
         if status.category == .PNUnexpectedDisconnectCategory {
             
             // This event happens when radio / connectivity is lost
@@ -102,24 +100,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
             // UI / internal notifications, etc
             
             // Select last object from list of channels and send message to it.
-            let targetChannel = client.channels().last as! String
-            client.publish("Hello from the PubNub Swift SDK", toChannel: targetChannel,
-                           compressed: false, withCompletion: { (status) -> Void in
-                            
-                            if !status.error {
+            if let targetChannel = client.channels().last {
+                client.publish("Hello from the PubNub Swift SDK", toChannel: targetChannel,
+                               compressed: false, withCompletion: { (status) -> Void in
                                 
-                                // Message successfully published to specified channel.
-                            }
-                            else{
-                                
-                                // Handle message publish error. Check 'category' property
-                                // to find out possible reason because of which request did fail.
-                                // Review 'errorData' property (which has PNErrorData data type) of status
-                                // object to get additional information about issue.
-                                //
-                                // Request can be resent using: status.retry()
-                            }
-            })
+                                if !status.error {
+                                    
+                                    // Message successfully published to specified channel.
+                                }
+                                else{
+                                    
+                                    // Handle message publish error. Check 'category' property
+                                    // to find out possible reason because of which request did fail.
+                                    // Review 'errorData' property (which has PNErrorData data type) of status
+                                    // object to get additional information about issue.
+                                    //
+                                    // Request can be resent using: status.retry()
+                                }
+                })
+            }
         }
         else if status.category == .PNReconnectedCategory {
             
