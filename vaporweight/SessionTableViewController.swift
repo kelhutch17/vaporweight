@@ -19,7 +19,7 @@ class SessionTableViewController : UITableViewController {
         
     }
     
-    func reload (notification: NSNotification) {
+    func reload () {
         tableView.reloadData()
     }
     
@@ -42,7 +42,7 @@ class SessionTableViewController : UITableViewController {
         formatter.locale = NSLocale.currentLocale()
         formatter.timeStyle = .MediumStyle
         
-        cell.durationLabel.text = locations[index].session.duration?.description
+        cell.durationLabel.text = "\(locations[index].session.duration!.description) seconds"
         cell.cityLabel.text = locations[index].title
         cell.dateLabel.text =  formatter.stringFromDate(locations[index].session.startTime)
         

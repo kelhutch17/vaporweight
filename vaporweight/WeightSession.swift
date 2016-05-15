@@ -20,5 +20,6 @@ class WeightSession {
     
     func setEnd(endT: NSDate) {
         self.endTime = endT
-        self.duration = Int(self.endTime.timeIntervalSince1970 - self.startTime.timeIntervalSince1970)
+        self.duration = Int(self.endTime!.timeIntervalSince1970 - self.startTime.timeIntervalSince1970)
+    }
 }

@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     var window: UIWindow?
     // Instance property
     var client: PubNub?
+    var newSession = WeightSession(startTime: NSDate())
+    var ongoingSession = false
+    
     
     // For demo purposes the initialization is done in the init function so that
     // the PubNub client is instantiated before it is used.
@@ -37,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
     
     // Handle new message from one of channels on which client has been subscribed.
     func client(client: PubNub, didReceiveMessage message: PNMessageResult) {
-        
         // Handle new message stored in message.data.message
         if message.data.actualChannel != nil {
             // Message has been received on channel group stored in
@@ -52,6 +54,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
         print("Received message: \(message.data.message!) on channel " +
             "\((message.data.actualChannel ?? message.data.subscribedChannel)!) at " +
             "\(message.data.timetoken)")
+        
+        if  (message.data.message!["status"] != nil && message.data.message!["status"]!!.description == "down"){
+            newSession = WeightSession(startTime: NSDate(timeIntervalSince1970: message.data.message!["timestamp"]!!.doubleValue))
+            ongoingSession = true
+            
+        }else if(message.data.message!["status"] != nil && message.data.message!["status"]!!.description == "up" && ongoingSession){
+            
+            newSession.setEnd(NSDate(timeIntervalSince1970: message.data.message!["timestamp"]!!.doubleValue))
+            ongoingSession = false
+            print(newSession.duration?.description)
+            Model.sharedInstance.addNewSessionLocation(newSession, location: Model.sharedInstance.defaultMapLocation())
+        }
     }
     
     // New presence event handling.

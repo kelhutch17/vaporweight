@@ -24,9 +24,9 @@ class Model
     
     init() {
         // test locations
-        locations.append(Location(title: "Noisebridge", coordinate: CLLocationCoordinate2D(latitude: 37.762634, longitude: -122.419078), description: "Coolest hacker space ever", session: WeightSession(startTime: NSDate())))
+        //locations.append(Location(title: "Noisebridge", coordinate: CLLocationCoordinate2D(latitude: 37.762634, longitude: -122.419078), description: "Coolest hacker space ever", session: WeightSession(startTime: NSDate())))
         
-        locations.append(Location(title: "Craftsman and Wolves", coordinate: CLLocationCoordinate2D(latitude: 37.760928, longitude: -122.421695), description: "Delicious pastries", session: WeightSession(startTime: NSDate())))
+        //locations.append(Location(title: "Craftsman and Wolves", coordinate: CLLocationCoordinate2D(latitude: 37.760928, longitude: -122.421695), description: "Delicious pastries", session: WeightSession(startTime: NSDate())))
     }
     
     // Setter and Getters
@@ -62,14 +62,34 @@ class Model
     }
     
     func addNewSessionLocation(session: WeightSession, location: CLLocation?) {
-        let name = ""
+        let geocoder = CLGeocoder()
+        var placeMark: CLPlacemark!
+        var name: String = ""
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        geocoder.reverseGeocodeLocation(location!, completionHandler: { (placemarks, error) -> Void in
+            
+            // Place details
+            placeMark = placemarks?[0]
+            
+            // Location name
+            if let locationName = placeMark.addressDictionary!["Name"] as? NSString {
+                print(locationName)
+                name = locationName as String
+            }
+            
+            let desc = ""
+            let coord = location?.coordinate
+            if coord != nil {
+                self.addLocation(name, description: desc, location: coord, session: session)
+            } else {
+                self.addLocation(name, description: desc, location: nil, session: session)
+            }
+            
+            appDelegate.client?.publish("{\nname = \(name);\n description = \(desc);\nlongitude = \(coord!.longitude.description);\nlatitude = \(coord!.latitude.description);\nduration = \(session.duration);\n}", toChannel: "vaporweightresponse1", withCompletion: nil)
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("LocationsUpdated", object: nil)
+        })
         // TODO reverse geo code coordinate and get a name and a desc
-        let desc = ""
-        if let coord = location?.coordinate {
-            addLocation(name, description: desc, location: coord, session: session)
-        } else {
-            addLocation(name, description: desc, location: nil, session: session)
-        }
     }
 
 }
