@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24A8BF9C1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A8BF9B1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png */; };
+		24A8BF9C1CE7ED2600660828 /* vaporwave.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A8BF9B1CE7ED2600660828 /* vaporwave.png */; };
 		62168EC61CE7DDCA0016782E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62168EC51CE7DDCA0016782E /* AppDelegate.swift */; };
 		62168EC81CE7DDCA0016782E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62168EC71CE7DDCA0016782E /* MainViewController.swift */; };
 		62168ECB1CE7DDCA0016782E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62168EC91CE7DDCA0016782E /* Main.storyboard */; };
 		62168ECD1CE7DDCA0016782E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62168ECC1CE7DDCA0016782E /* Assets.xcassets */; };
 		62168ED01CE7DDCA0016782E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62168ECE1CE7DDCA0016782E /* LaunchScreen.storyboard */; };
+		6235CEC71CE8032C003E86CA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6235CEC61CE8032C003E86CA /* Location.swift */; };
+		6235CEC91CE804A2003E86CA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6235CEC81CE804A2003E86CA /* Model.swift */; };
+		6235CECD1CE80E1C003E86CA /* LocationSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6235CECC1CE80E1C003E86CA /* LocationSingleton.swift */; };
+		6235CECF1CE817F8003E86CA /* WeightSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6235CECE1CE817F8003E86CA /* WeightSession.swift */; };
+		6235CED21CE85BF7003E86CA /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6235CED11CE85BF7003E86CA /* SessionTableViewCell.swift */; };
+		6235CED41CE85D63003E86CA /* SessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6235CED31CE85D63003E86CA /* SessionTableViewController.swift */; };
 		62F270761CE7F2910072C9E5 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F270751CE7F2910072C9E5 /* TimerViewController.swift */; };
 		62F270781CE7F2AB0072C9E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F270771CE7F2AB0072C9E5 /* MapViewController.swift */; };
 		62F2707B1CE7F3010072C9E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F2707A1CE7F3010072C9E5 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		24A8BF9B1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "635844632811668548-110012419_IZTpcV7.png"; sourceTree = "<group>"; };
+		24A8BF9B1CE7ED2600660828 /* vaporwave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vaporwave.png; sourceTree = "<group>"; };
 		62168EC21CE7DDCA0016782E /* vaporweight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vaporweight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62168EC51CE7DDCA0016782E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62168EC71CE7DDCA0016782E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +33,12 @@
 		62168ECC1CE7DDCA0016782E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62168ECF1CE7DDCA0016782E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62168ED11CE7DDCA0016782E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6235CEC61CE8032C003E86CA /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6235CEC81CE804A2003E86CA /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6235CECC1CE80E1C003E86CA /* LocationSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSingleton.swift; sourceTree = "<group>"; };
+		6235CECE1CE817F8003E86CA /* WeightSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightSession.swift; sourceTree = "<group>"; };
+		6235CED11CE85BF7003E86CA /* SessionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
+		6235CED31CE85D63003E86CA /* SessionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTableViewController.swift; sourceTree = "<group>"; };
 		62F270751CE7F2910072C9E5 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		62F270771CE7F2AB0072C9E5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		62F2707A1CE7F3010072C9E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -65,14 +77,27 @@
 			isa = PBXGroup;
 			children = (
 				62168EC51CE7DDCA0016782E /* AppDelegate.swift */,
+				6235CED01CE817FE003E86CA /* Classes */,
 				62F270791CE7F2B10072C9E5 /* View Controllers */,
 				62168EC91CE7DDCA0016782E /* Main.storyboard */,
 				62168ECC1CE7DDCA0016782E /* Assets.xcassets */,
 				62168ECE1CE7DDCA0016782E /* LaunchScreen.storyboard */,
 				62168ED11CE7DDCA0016782E /* Info.plist */,
-				24A8BF9B1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png */,
+				24A8BF9B1CE7ED2600660828 /* vaporwave.png */,
 			);
 			path = vaporweight;
+			sourceTree = "<group>";
+		};
+		6235CED01CE817FE003E86CA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6235CEC61CE8032C003E86CA /* Location.swift */,
+				6235CEC81CE804A2003E86CA /* Model.swift */,
+				6235CECC1CE80E1C003E86CA /* LocationSingleton.swift */,
+				6235CECE1CE817F8003E86CA /* WeightSession.swift */,
+				6235CED11CE85BF7003E86CA /* SessionTableViewCell.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		62F270791CE7F2B10072C9E5 /* View Controllers */ = {
@@ -81,6 +106,7 @@
 				62168EC71CE7DDCA0016782E /* MainViewController.swift */,
 				62F270751CE7F2910072C9E5 /* TimerViewController.swift */,
 				62F270771CE7F2AB0072C9E5 /* MapViewController.swift */,
+				6235CED31CE85D63003E86CA /* SessionTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -144,7 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62168ED01CE7DDCA0016782E /* LaunchScreen.storyboard in Resources */,
-				24A8BF9C1CE7ED2600660828 /* 635844632811668548-110012419_IZTpcV7.png in Resources */,
+				24A8BF9C1CE7ED2600660828 /* vaporwave.png in Resources */,
 				62168ECD1CE7DDCA0016782E /* Assets.xcassets in Resources */,
 				62168ECB1CE7DDCA0016782E /* Main.storyboard in Resources */,
 			);
@@ -159,7 +185,13 @@
 			files = (
 				62168EC81CE7DDCA0016782E /* MainViewController.swift in Sources */,
 				62F270761CE7F2910072C9E5 /* TimerViewController.swift in Sources */,
+				6235CED41CE85D63003E86CA /* SessionTableViewController.swift in Sources */,
+				6235CECF1CE817F8003E86CA /* WeightSession.swift in Sources */,
+				6235CEC71CE8032C003E86CA /* Location.swift in Sources */,
+				6235CECD1CE80E1C003E86CA /* LocationSingleton.swift in Sources */,
+				6235CEC91CE804A2003E86CA /* Model.swift in Sources */,
 				62168EC61CE7DDCA0016782E /* AppDelegate.swift in Sources */,
+				6235CED21CE85BF7003E86CA /* SessionTableViewCell.swift in Sources */,
 				62F270781CE7F2AB0072C9E5 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

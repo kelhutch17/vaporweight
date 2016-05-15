@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+
+class WeightSession {
+    var startTime : NSDate
+    var endTime : NSDate?
+    var duration : Float32?
+    
+    init(startTime: NSDate) {
+        self.startTime = startTime
+    }
+}
