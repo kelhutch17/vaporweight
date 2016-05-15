@@ -42,6 +42,9 @@
 		62F270751CE7F2910072C9E5 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		62F270771CE7F2AB0072C9E5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		62F2707A1CE7F3010072C9E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8A9ED2FE17C1FEFABE4F8089 /* Pods_vaporweight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vaporweight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9054C651FB83A59721A98846 /* Pods-vaporweight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vaporweight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vaporweight/Pods-vaporweight.debug.xcconfig"; sourceTree = "<group>"; };
+		E19AB9D361D8323476EC307F /* Pods-vaporweight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vaporweight.release.xcconfig"; path = "Pods/Target Support Files/Pods-vaporweight/Pods-vaporweight.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,18 +53,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				62F2707B1CE7F3010072C9E5 /* MapKit.framework in Frameworks */,
+				3FDB92835BAE895A27C5F353 /* Pods_vaporweight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57C4A14C3AFDA186E0B1C2E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9054C651FB83A59721A98846 /* Pods-vaporweight.debug.xcconfig */,
+				E19AB9D361D8323476EC307F /* Pods-vaporweight.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		62168EB91CE7DDCA0016782E = {
 			isa = PBXGroup;
 			children = (
 				62F2707A1CE7F3010072C9E5 /* MapKit.framework */,
 				62168EC41CE7DDCA0016782E /* vaporweight */,
 				62168EC31CE7DDCA0016782E /* Products */,
+				57C4A14C3AFDA186E0B1C2E5 /* Pods */,
+				BD808C0FD768F82D20A2D3ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +126,14 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		BD808C0FD768F82D20A2D3ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A9ED2FE17C1FEFABE4F8089 /* Pods_vaporweight.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +141,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62168ED41CE7DDCA0016782E /* Build configuration list for PBXNativeTarget "vaporweight" */;
 			buildPhases = (
+				9279F46E56715FD316CA3BF2 /* 📦 Check Pods Manifest.lock */,
 				62168EBE1CE7DDCA0016782E /* Sources */,
 				62168EBF1CE7DDCA0016782E /* Frameworks */,
 				62168EC01CE7DDCA0016782E /* Resources */,
+				00FB51D441B5DCFC8C6B945A /* 📦 Embed Pods Frameworks */,
+				C36101B091C9BF1EAA870AFB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,6 +203,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00FB51D441B5DCFC8C6B945A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vaporweight/Pods-vaporweight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9279F46E56715FD316CA3BF2 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C36101B091C9BF1EAA870AFB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vaporweight/Pods-vaporweight-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		62168EBE1CE7DDCA0016782E /* Sources */ = {
@@ -303,6 +377,7 @@
 		};
 		62168ED51CE7DDCA0016782E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9054C651FB83A59721A98846 /* Pods-vaporweight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = vaporweight/Info.plist;
@@ -314,6 +389,7 @@
 		};
 		62168ED61CE7DDCA0016782E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E19AB9D361D8323476EC307F /* Pods-vaporweight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = vaporweight/Info.plist;
