@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  MapViewController.swift
 //  vaporweight
 //
 //  Created by Kelly Hutchison on 5/14/16.
@@ -8,19 +8,20 @@
 
 import Foundation
 import UIKit
+import MapKit
 
-class MainViewController: UIViewController {
-
+class MapViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
