@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
             // message.data.subscribedChannel
         }
         
-        print("Received message: \(message.data.message) on channel " +
+        print("Received message: \(message.data.message!) on channel " +
             "\((message.data.actualChannel ?? message.data.subscribedChannel)!) at " +
             "\(message.data.timetoken)")
     }
