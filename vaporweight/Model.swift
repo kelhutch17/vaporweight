@@ -85,8 +85,18 @@ class Model
                 self.addLocation(name, description: desc, location: nil, session: session)
             }
             
-            appDelegate.client?.publish("{\nname = \(name);\n description = \(desc);\nlongitude = \(coord!.longitude.description);\nlatitude = \(coord!.latitude.description);\nduration = \(session.duration);\n}", toChannel: "vaporweightresponse1", withCompletion: nil)
+            var channelSelection = ""
+            if (appDelegate.client?.channels()[0] == "vaporweight1") {
+                channelSelection = "vaporweightresponse1"
+            }else{
+                channelSelection = "vaporweightresponse2"
+            }
             
+            appDelegate.client?.publish("\(name);\(coord!.longitude.description);\(coord!.latitude.description);\(session.duration!);", toChannel: channelSelection, withCompletion: nil)
+            
+            
+            
+            print("{\nname = \(name);\ndescription = \(desc);\nlongitude = \(coord!.longitude.description);\nlatitude = \(coord!.latitude.description);\nduration = \(session.duration!);\n}")
             NSNotificationCenter.defaultCenter().postNotificationName("LocationsUpdated", object: nil)
         })
         // TODO reverse geo code coordinate and get a name and a desc
